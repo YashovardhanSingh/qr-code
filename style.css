@@ -8,14 +8,16 @@
 }
 
 body {
-  display: grid;
-  place-items: center;
   height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 .container h1 {
@@ -29,13 +31,14 @@ body {
   width: 100%;
 }
 
-.container .form input, .container .form select, .container .form button{
+.container .form * {
   height: 3rem;
   margin-top: 1.5rem;
   font-size: 1em;
   border: 0.2rem solid rgb(229, 231, 235);
   border-radius: 0.25rem;
   padding-left: 1rem;
+  outline: none;
 }
 
 .container .form button {
@@ -62,4 +65,26 @@ body {
   text-decoration: none;
   text-align: center;
   line-height: 3rem;
+}
+
+@media (max-width: 420px) {
+  .container h1 {
+    font-size: 2em;
+  }
+  .container .form {
+    width: 90%;
+    margin-left: 1rem;
+  }
+  .form * {
+    width: 100%;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 915px) {
+  .container {
+    top: 25%;
+  }
+  .container h1 {
+    font-size: 2.25em;
+  }
 }
